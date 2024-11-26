@@ -11,6 +11,12 @@
 default_zone="example.com"
 default_dns_record="www.example.com"
 
+# Get values from environment variables or use default values
+zone_name=${ZONE_NAME:-$default_zone}
+dns_record=${DNS_RECORD:-$default_dns_record}
+cloudflare_auth_email=${CLOUDFLARE_AUTH_EMAIL:-}
+api_token=${API_TOKEN:-}
+
 # Parse command line arguments
 while getopts "z:d:e:k:" opt; do
     case $opt in
